@@ -7,16 +7,33 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="8">
+      <ng-container *ngFor="let produto of this.produtos">
+        <ion-item id="{{produto.id}}">
+          <ion-avatar slot="start">
+            <img src="{{produto.image}}" alt="">
+          </ion-avatar>
+          <ion-label>Nome: {{produto.nome}}</ion-label>
+          <ion-label>Preço: {{produto.preco}}</ion-label>
+          <ion-label>Marca: {{produto.marca}}</ion-label>
+          <ion-button id="{{ produto.id}}">Visualizar</ion-button>
 
-  <div id="container">
-    <h3>Projeto com Bootstrap e Ionic!</h3>
-    <hr>
-    <p>Componentes Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"> - UI Components</a></p>
-    <p>Componentes Bootstrap <a target="_blank" rel="noopener noreferrer" href="https://getbootstrap.com/docs/5.3/components/buttons/"> - UI Components</a></p>
-  </div>
+          <ion-alert
+            trigger="{{produto.id}}"
+            header="Detalhes do Produto"
+            message="
+              Nome: {{produto.nome}}
+              Preço: {{produto.preco}}
+              Marca: {{ produto.marca}}
+            "
+            [buttons]="alertButtons"
+          > </ion-alert>
+        </ion-item>
+
+      </ng-container>
+    
+
+    </ion-col>
+  </ion-row>
 </ion-content>
