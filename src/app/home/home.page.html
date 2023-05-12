@@ -12,10 +12,26 @@
       <img src="{{ perfil.foto_perfil }}"> 
     </ion-col >
     <ion-col size="8">
-      <H1>{{ perfil.nome }}</H1>
-      <ion-label>{{ perfil.profissao }}</ion-label><br>
+      <ion-row>
+        <ion-col size="12">
+          <H1>{{ perfil.nome }}</H1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-label>{{ perfil.profissao }}</ion-label><br>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="full" shape="round">Seguir</ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="full" shape="round">Mensagem</ion-button>
+        </ion-col>
+      </ion-row>
+      
 
-      <ion-button>Seguir</ion-button> <ion-button [disabled]="true">Mensagem</ion-button>
     </ion-col>
   </ion-row>
 
@@ -36,11 +52,67 @@
 
   <hr size="20px">
 
-  <ion-row size="12 d-flex justify-content-center">
-    <ion-col size="10">
-      <h1>Sobre</h1>
+  <ion-row >
+    <ion-col size="5" class="sobre">
+      <h2>Sobre</h2>
+      <p>Pessoa inteligente e extrovertida,gosta de jogar minecraft
+        e CSGO, estudar programação nas horas vagas.
+      </p>
     </ion-col>
   </ion-row>
+
+  <hr>
+  <ion-row>
+    <ion-col size="12 " class="d-flex justify-content-center">
+      <h2>Postagem de amigos</h2>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ng-container *ngFor="let postagem of this.postagens">
+      <ion-col size="12" class="conteudo_post d-flex justify-content-center">
+        <ion-row>
+          <ion-row size="12" class="foto_perfil">
+            <ion-avatar>
+              <img src="{{postagem.perfil.foto}}">
+             </ion-avatar>
+          </ion-row>   
+          <ion-row size="12" >
+            <ion-col class="nome_perfil">
+              <h5>{{postagem.perfil.nome  }}</h5>
+            </ion-col>
+            <ion-col class="nome_perfil" >
+              <h6>{{postagem.perfil.mencao_perfil}}</h6>
+            </ion-col>
+
+          </ion-row>
+
+          
+          <ion-col size="12" >
+            <ion-row>
+              <ion-col>
+                <h6 class="d-flex justify-content-center">{{postagem.postagem.mensagem}}</h6>
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col class="d-flex justify-content-center">
+                <img src="{{postagem.postagem.foto}}" class="postagem_imagem ">
+              </ion-col>
+            </ion-row>
+             
+          </ion-col>
+          
+        </ion-row> 
+        
+        
+      </ion-col>
+      
+
+      
+    </ng-container>
+  </ion-row>
+
 
 
   
