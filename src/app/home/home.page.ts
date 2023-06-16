@@ -55,6 +55,7 @@ export class HomePage {
     this.decimal = false;
     this.decimals = 0;
   }
+  // Função para adionar contas com ponto 
   ponto(){
     this.decimal=true
   }
