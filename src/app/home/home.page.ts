@@ -11,8 +11,8 @@ import { IonicModule } from '@ionic/angular';
 })
 export class HomePage {
   // declarações
-  v2=0;
   v1=0;
+  v2=0;
   numero='number';
   operador='+'
   decimal=false;
