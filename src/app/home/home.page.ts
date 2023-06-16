@@ -12,8 +12,10 @@ import { IonicModule } from '@ionic/angular';
 export class HomePage {
 
   exibir(numero: number) {
-		document.write(numero);
+		alert(numero);
 	}
+
+ 
 
   
 
