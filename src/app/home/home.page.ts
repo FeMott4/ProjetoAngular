@@ -55,6 +55,9 @@ export class HomePage {
     this.decimal = false;
     this.decimals = 0;
   }
+  ponto(){
+    this.decimal=true
+  }
   // Função que apagas os dados digitados anteriormente na calculadora
   apagar() {
     this.v2 = 0;
